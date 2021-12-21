@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="at.fh.hgb.mc.bazramicroproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BazraMicroProjectNoAction">
+        <activity
+            android:name=".GameActivity"
+            android:exported="true"
+            android:label="@string/title_activity_game"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+            <!--android:theme="@style/Theme.BazraMicroProjectNoAction"-->
+        <activity
+            android:name=".SavedGamesActivity"
+            android:exported="true"/>
+           <!-- android:theme="@style/Theme.BazraMicroProjectNoAction"-->
+        <activity
+            android:name=".CreateGameActivity"
+            android:exported="true"
+            android:label="@string/title_activity_create_game"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+            <!--android:theme="@style/Theme.BazraMicroProjectNoAction"-->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <!--android:theme="@style/Theme.BazraMicroProjectNoAction"-->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

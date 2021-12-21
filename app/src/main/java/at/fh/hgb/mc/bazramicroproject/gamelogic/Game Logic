@@ -1,0 +1,30 @@
+//GAMELOGIC
+        /*
+            When a card is played, the code needs to check if any card has the same value as the played card.
+            Every matching card gets added to the card stack of the player that has played the card.
+            Furthermore cards with values ADDing up to the value of the played card get moved to the players card stack too.
+            Cards without a numeric value like KING can only take other cards of the same value, this case only KINGs.
+            If the player plays a card, there are two cases for when he takes all cards currently on the field.
+            First one:
+            There are two special cards in the game. The first of these being the J. This card may take all other cards on the field,
+            without the values matching.
+            The second one is the caro 7. It may either be played as a J or for the other case.
+            Second one:
+            When the played cards value matches all of the values of the cards on the field, then this is a Bazra.
+            This rule also applies to the J. If there are only Js on the field then this is a Bazra.
+            The caro 7 acts like a joker in this case. The caro 7 automatically becomes the value that allows for a Bazra,
+            meaning any Bazra can also be done with a caro 7. There is only one exception. A J-Bazra is worth more points
+            than a regular Bazra, which is why it may only be done by a J and not a caro 7.
+
+            Every player receives 4 cards after all cards have been played. Field cards are only laid down by the computer
+            at the start of a deck. If a player does not have a card with which he can take cards from the field or there are
+            no cards on the field, he must play a card that gets added to the field.
+
+            After all cards in the given number of decks have been played, all cards on each players stack are counted.
+            The player with the most cards receives 30 points. If multiple players have the same amount of cards, each one
+            receives 10 points. Furthermore each Bazra is worth 10 points, but as stated before, a J-Bazra is special and is worth 30 points.
+
+            If no one has reached the designated number of points for a win, the deck(s) are played again.
+            If more than one player has reached the number of points to win, the points to win will be increased and the deck(s) will be played again.
+         */
+        //GAMELOGIC

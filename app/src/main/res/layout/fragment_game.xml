@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_game_relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.game.GameFragment">
+
+    <TextView
+        android:id="@+id/fragment_game_isBazraText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/fragment_game_pointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/fragment_game_isBazraText"
+        android:layout_alignBottom="@+id/fragment_game_isBazraText"
+        android:layout_toStartOf="@+id/fragment_game_isBazraText"
+        android:layout_toLeftOf="@id/fragment_game_isBazraText" />
+
+    <TextView
+        android:id="@+id/fragment_game_helper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="8dp" />
+</RelativeLayout>

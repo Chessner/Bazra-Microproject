@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateGameActivity">
+
+    <TextView
+        android:id="@+id/activity_create_game_nrOfDecksLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/activity_create_game_nrOfDecksLabel_text"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_create_game_nrOfDecksInput"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_create_game_nrOfDecksInput" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <EditText
+        android:id="@+id/activity_create_game_nrOfDecksInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="2"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <Button
+        android:id="@+id/activity_create_game_playAloneButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/activity_create_game_playAloneButton_text"
+        android:textColor="@color/purple_200"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_person_24"
+        app:iconTint="@color/purple_200"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:strokeColor="@color/purple_200"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/activity_create_game_playAiButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_create_game_playAiButton_text"
+        android:textColor="@color/purple_200"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_computer_24"
+        app:iconTint="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="@+id/activity_create_game_playFriendsButton"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_game_playFriendsButton"
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_game_playFriendsButton"
+        app:strokeColor="@color/purple_200"
+        app:strokeWidth="3dp" />
+
+    <Button
+        android:id="@+id/activity_create_game_playFriendsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_create_game_playFriendsButton_text"
+        android:textColor="@color/purple_200"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/ic_baseline_people_24"
+        app:iconTint="@color/purple_200"
+        app:layout_constraintEnd_toEndOf="@+id/activity_create_game_playAloneButton"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_game_playAloneButton"
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_game_playAloneButton"
+        app:strokeColor="@color/purple_200"
+        app:strokeWidth="3dp" />
+
+    <TextView
+        android:id="@+id/activity_create_game_nrOfPointsLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_create_game_nrOfPointsLabel_text"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_create_game_nrOfPointsInput"
+        app:layout_constraintEnd_toEndOf="@+id/activity_create_game_nrOfDecksLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_game_nrOfDecksLabel"
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_game_nrOfDecksInput" />
+
+    <EditText
+        android:id="@+id/activity_create_game_nrOfPointsInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="130"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/activity_create_game_nrOfDecksInput"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_game_nrOfDecksInput"
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_game_nrOfDecksInput"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/activity_create_game_gameNameLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_create_game_gameNameLabel_text"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_create_game_gameNameInput"
+        app:layout_constraintEnd_toEndOf="@+id/activity_create_game_nrOfPointsLabel"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_game_nrOfPointsLabel"
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_game_nrOfPointsInput" />
+
+    <EditText
+        android:id="@+id/activity_create_game_gameNameInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/activity_create_game_nrOfPointsInput"
+        app:layout_constraintStart_toStartOf="@+id/activity_create_game_nrOfPointsInput"
+        app:layout_constraintTop_toBottomOf="@+id/activity_create_game_nrOfPointsInput"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/activity_create_game_deckApiInfoLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FF0303"
+        android:backgroundTint="#AE1515"
+        android:text="@string/activity_create_game_deckApiInfoLabel_text"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7017784" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

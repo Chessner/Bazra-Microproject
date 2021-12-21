@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name" translatable="false">Bazra MicroProject</string>
+    <string name="activity_splash_screen_logoImageView">app logo, deck of card</string>
+    <string name="activity_main_mySavedGamesButton_text">My saved games</string>
+    <string name="activity_main_createGameButton_text">Create game</string>
+    <string name="title_activity_create_game" translatable="false">CreateGameActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="activity_create_game_nrOfDecksLabel_text">"Choose the number of card decks: "</string>
+    <string name="activity_create_game_deckApiInfoLabel_text">Please note: Due to technical limitations, card decks can only be stored for a maximum of two weeks! The maximum amount of decks is 20!</string>
+    <string name="activity_create_game_playAloneButton_text">Play alone</string>
+    <string name="activity_create_game_playAiButton_text">Play against computer</string>
+    <string name="activity_create_game_playFriendsButton_text">Play against friends</string>
+    <string name="activity_saved_games_recyclerview_listitem_createdTextLabel_text">Created:</string>
+    <string name="activity_saved_games_recyclerview_listitem_deleteTextLabel_text">Deletion on:</string>
+    <string name="activity_saved_games_recyclerview_listitem_nrOfDecksLabel_text">"Decks left to play: "</string>
+    <string name="activity_saved_games_recyclerview_listitem_pointsToBeReachedLabel_text">Points to win:</string>
+    <string name="activity_saved_games_recyclerview_listitem_gameNameLabel_text">"Game name: "</string>
+    <string name="notImplemented_toast">This feature hasn\'t been implemented yet, sorry..</string>
+    <string name="title_activity_game" translatable="false">GameActivity</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_subtitle">Prototype version 1.0</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="menu_game">Game</string>
+    <string name="menu_settings">Save game</string>
+    <string name="fragment_settings_saveGameButton_text">Save Game</string>
+    <string name="fragment_settings_saveGameNameLabel_text">Give your savegame a name:</string>
+    <string name="fragment_setting_quitToAppHomeScreenButton">Quit to app home screen</string>
+    <string name="fragment_settings_quitToHomeScreenButton_text">Quit to home screen</string>
+    <string name="nav_header_title">Bazra card game</string>
+    <string name="activity_create_game_nrOfPointsLabel_text">Points to win:</string>
+    <string name="activity_create_game_gameNameLabel_text">Choose a name:</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_create_game_nrOfDecksLabel_text">Wähle die Anzahl an Kartendecks:</string>
+    <string name="activity_splash_screen_logoImageView">App logo, Kartendeck</string>
+    <string name="activity_main_createGameButton_text">Spiel erstellen</string>
+    <string name="activity_main_mySavedGamesButton_text">Meine gespeicherten Spiele</string>
+    <string name="activity_create_game_deckApiInfoLabel_text">Bitte beachten Sie: Aufgrund von technischen Limitationen können Kartendecks nur maximal zwei Wochen gespeichert werden! Die maximale Anzahl an Kartendecks ist 20!</string>
+    <string name="activity_create_game_playAloneButton_text">Alleine spielen</string>
+    <string name="activity_create_game_playAiButton_text">Gegen den Computer spielen</string>
+    <string name="activity_create_game_playFriendsButton_text">Gegen Freunde spielen</string>
+    <string name="activity_saved_games_recyclerview_listitem_createdTextLabel_text">Erstellt:</string>
+    <string name="activity_saved_games_recyclerview_listitem_deleteTextLabel_text">Löschung am:</string>
+    <string name="activity_saved_games_recyclerview_listitem_nrOfDecksLabel_text">Kartendecks übrig:</string>
+    <string name="activity_saved_games_recyclerview_listitem_pointsToBeReachedLabel_text">Punkte bis zum Sieg:</string>
+    <string name="activity_saved_games_recyclerview_listitem_gameNameLabel_text">Name des Spiels:</string>
+    <string name="notImplemented_toast">Oh nein, dieses Feature funktioniert noch nicht. Bitte im Raum schreinend auf und ab laufen und es später erneut versuchen.</string>
+    <string name="menu_game">Spiel</string>
+    <string name="menu_settings">Speichern</string>
+    <string name="fragment_settings_saveGameButton_text">Spiel speichern</string>
+    <string name="fragment_settings_saveGameNameLabel_text">"Gib deinem Spielstand einen Namen: "</string>
+    <string name="fragment_setting_quitToAppHomeScreenButton">Verlassen und zum App-Hauptbildschirm zurückkehren</string>
+    <string name="fragment_settings_quitToHomeScreenButton_text">Verlassen und zum Hauptbildschirm zurückkehren</string>
+    <string name="nav_header_title">Bazra Kartenspiel</string>
+    <string name="nav_header_subtitle">Prototyp Version 1.0</string>
+    <string name="activity_create_game_nrOfPointsLabel_text">Punkte bis zum Sieg:</string>
+    <string name="activity_create_game_gameNameLabel_text">Wähle einen Namen:</string>
+</resources>
