@@ -15,7 +15,8 @@
     </style>
     <style name="Theme.BazraMicroProjectNoAction" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#1d0e1f</item>
+        <item name="colorPrimary">#3C1D40</item>
+        <item name="android:itemBackground">#03A9F4</item>
         <item name="colorPrimaryVariant">#1d0e1f</item>
         <item name="colorOnPrimary">#242424</item>
         <!-- Secondary brand color. -->

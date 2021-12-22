@@ -1,5 +1,6 @@
 package at.fh.hgb.mc.bazramicroproject
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
@@ -51,6 +52,13 @@ class GameActivity : AppCompatActivity() {
         if(sp.getString(GOTTEN_CARDS, "") == "" ){
             val l = mutableListOf<DrawResponse.Card>()
             sp.edit().putString(GOTTEN_CARDS,Gson().toJson(l)).apply()
+        }
+
+        when (this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
+            Configuration.UI_MODE_NIGHT_YES -> {navView.itemTextColor = getColorStateList(R.color.white)
+            navView.itemIconTintList}
+            Configuration.UI_MODE_NIGHT_NO -> {navView.itemTextColor = getColorStateList(R.color.black)}
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> {}
         }
     }
 

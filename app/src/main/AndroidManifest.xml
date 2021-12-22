@@ -18,8 +18,8 @@
             android:exported="true"
             android:label="@string/title_activity_game"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.BazraMicroProjectNoAction"
             tools:ignore="LockedOrientationActivity" />
-            <!--android:theme="@style/Theme.BazraMicroProjectNoAction"-->
         <activity
             android:name=".SavedGamesActivity"
             android:exported="true"/>

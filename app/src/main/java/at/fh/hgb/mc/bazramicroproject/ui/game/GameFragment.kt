@@ -52,7 +52,6 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
         savedInstanceState: Bundle?
     ): View {
 
-
         //Inflate fragment
         _binding = FragmentGameBinding.inflate(inflater, container, false)
         val root: View = binding.root
