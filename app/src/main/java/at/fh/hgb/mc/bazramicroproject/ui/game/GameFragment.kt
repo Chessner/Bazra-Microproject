@@ -95,7 +95,7 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
         }
 
         val handStateString = i?.getStringExtra(HAND_STATE)
-        if(handStateString != null) {
+        if (handStateString != null) {
             haventReceivedCardsFromIntent = false
             val handStateList = Gson().fromJson<ArrayList<LinkedTreeMap<String, String>>>(
                 handStateString,
@@ -108,7 +108,7 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
 
 
     private fun giveOutCards() {
-        if(haventReceivedCardsFromIntent) {
+        if (haventReceivedCardsFromIntent) {
             giveOutHandCards()
             giveOutFieldCards()
         } else {
@@ -210,9 +210,12 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
         }, 2000)
     }
 
-
+    /**
+     * View function responsible for drawing the current hand cards and updating the currentCardsOnHandImgView list.
+     */
     private fun drawHandCards() {
         val parentLayout = binding.fragmentGameRelativeLayout
+        val layoutHelperCenter = binding.fragmentGameHelper
 
         for (index in 0 until currentCardsOnHand.size) {
             val card = currentCardsOnHand[index]
@@ -226,6 +229,29 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
             )
 
             when (index) {
+                0 -> {
+                    lp.addRule(RelativeLayout.START_OF, layoutHelperCenter.id)
+                    lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, parentLayout.id)
+                    view.layoutParams = lp
+                }
+                1 -> {
+                    lp.addRule(RelativeLayout.END_OF, layoutHelperCenter.id)
+                    lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, parentLayout.id)
+                    view.layoutParams = lp
+                }
+                2 -> {
+                    lp.addRule(RelativeLayout.END_OF, currentCardsOnHandImgView[1].id)
+                    lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, parentLayout.id)
+                    view.layoutParams = lp
+                }
+                3 -> {
+                    lp.addRule(RelativeLayout.START_OF, currentCardsOnHandImgView[0].id)
+                    lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, parentLayout.id)
+                    view.layoutParams = lp
+                }
+            }
+
+            /*when (index) {
                 0 -> {
                     lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, parentLayout.id)
                     lp.addRule(RelativeLayout.ALIGN_LEFT, parentLayout.id)
@@ -246,7 +272,7 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
                     lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[2].id)
                     view.layoutParams = lp
                 }
-            }
+            }*/
             view.load(card.image)
 
             if (currentCardsOnHandImgView.size > index) {
@@ -433,6 +459,9 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
         }
     }
 
+    /**
+     * Manages the long clicks on the cards. When a long click is performed on a card, it is immediately played.
+     */
     override fun onLongClick(v: View?): Boolean {
         Log.i(TAG, "GameFragment::onLongClick()")
         when (v?.id) {
@@ -452,6 +481,9 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
         return true
     }
 
+    /**
+     * Manages the clicks on the cards. When it's the first click, the card is made bigger. When it is the second one it is played.
+     */
     override fun onClick(v: View?) {
         Log.i(TAG, "GameFragment::onClick")
         //Params for focused card
@@ -459,6 +491,7 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
         val h = kotlin.math.floor(v.height.times(1.5)).toInt()
         val lp = RelativeLayout.LayoutParams(w, h)
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+        val layoutHelperCenter = binding.fragmentGameHelper
 
         if (handCardFocused?.id == v.id) {
             handCardFocused = null
@@ -473,7 +506,7 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
             lpUnfocus.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
 
             //find the correct currently focused hand card and set params
-            if (0 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[0].id) {
+            /*if (0 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[0].id) {
                 lpUnfocus.addRule(RelativeLayout.ALIGN_PARENT_LEFT)
             } else if (1 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[1].id) {
                 lpUnfocus.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[0].id)
@@ -481,23 +514,38 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
                 lpUnfocus.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[1].id)
             } else if (3 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[3].id) {
                 lpUnfocus.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[2].id)
+            }*/
+
+            if (0 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[0].id) {
+                lpUnfocus.addRule(RelativeLayout.START_OF, layoutHelperCenter.id)
+            } else if (1 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[1].id) {
+                lpUnfocus.addRule(RelativeLayout.END_OF, layoutHelperCenter.id)
+            } else if (2 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[2].id) {
+                lpUnfocus.addRule(RelativeLayout.END_OF, currentCardsOnHandImgView[1].id)
+            } else if (3 < currentCardsOnHandImgView.size && handCardFocused?.id == currentCardsOnHandImgView[3].id) {
+                lpUnfocus.addRule(RelativeLayout.START_OF, currentCardsOnHandImgView[0].id)
             }
+
             handCardFocused?.layoutParams = lpUnfocus
         }
 
 
         //Set the correct layoutparams for the clicked hand card
         if (0 < currentCardsOnHandImgView.size && v.id == currentCardsOnHandImgView[0].id) {
-            lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT)
+            //lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT)
+            lp.addRule(RelativeLayout.START_OF, layoutHelperCenter.id)
             handCardFocused = currentCardsOnHandImgView[0]
         } else if (1 < currentCardsOnHandImgView.size && v.id == currentCardsOnHandImgView[1].id) {
-            lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[0].id)
+            //lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[0].id)
+            lp.addRule(RelativeLayout.END_OF, layoutHelperCenter.id)
             handCardFocused = currentCardsOnHandImgView[1]
         } else if (2 < currentCardsOnHandImgView.size && v.id == currentCardsOnHandImgView[2].id) {
-            lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[1].id)
+            //lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[1].id)
+            lp.addRule(RelativeLayout.END_OF, currentCardsOnHandImgView[1].id)
             handCardFocused = currentCardsOnHandImgView[2]
         } else if (3 < currentCardsOnHandImgView.size && v.id == currentCardsOnHandImgView[3].id) {
-            lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[2].id)
+            //lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnHandImgView[2].id)
+            lp.addRule(RelativeLayout.START_OF, currentCardsOnHandImgView[0].id)
             handCardFocused = currentCardsOnHandImgView[3]
         }
         v.layoutParams = lp
