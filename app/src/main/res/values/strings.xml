@@ -46,4 +46,6 @@
     <string name="nav_header_title">Bazra card game</string>
     <string name="activity_create_game_nrOfPointsLabel_text">Points to win:</string>
     <string name="activity_create_game_gameNameLabel_text">Choose a name:</string>
+    <string name="bazra">Bazra achieved</string>
+    <string name="no_bazra">No Bazra</string>
 </resources>

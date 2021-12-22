@@ -24,4 +24,6 @@
     <string name="nav_header_subtitle">Prototyp Version 1.0</string>
     <string name="activity_create_game_nrOfPointsLabel_text">Punkte bis zum Sieg:</string>
     <string name="activity_create_game_gameNameLabel_text">Wähle einen Namen:</string>
+    <string name="bazra">Bazra erreicht</string>
+    <string name="no_bazra">Kein Bazra</string>
 </resources>

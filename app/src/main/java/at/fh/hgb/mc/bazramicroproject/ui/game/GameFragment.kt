@@ -6,18 +6,18 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.findNavController
 import at.fh.hgb.mc.bazramicroproject.*
 import at.fh.hgb.mc.bazramicroproject.databinding.FragmentGameBinding
-import at.fh.hgb.mc.bazramicroproject.GameState
 import at.fh.hgb.mc.bazramicroproject.interfaces.IAPIResponse
 import at.fh.hgb.mc.bazramicroproject.interfaces.VolleyCallback
 import at.fh.hgb.mc.bazramicroproject.networking.DrawResponse
@@ -439,9 +439,9 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
 
     private fun updateDebugOutput(isBazra: Boolean) {
         if (isBazra) {
-            binding.fragmentGameIsBazraText.text = "Bazra"
+            binding.fragmentGameIsBazraText.text = getText(R.string.bazra)
         } else {
-            binding.fragmentGameIsBazraText.text = "No Bazra"
+            binding.fragmentGameIsBazraText.text = getText(R.string.no_bazra)
         }
 
         binding.fragmentGamePointsText.text = state.currentPoints.toString()

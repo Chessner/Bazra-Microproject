@@ -1,5 +1,6 @@
 package at.fh.hgb.mc.bazramicroproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,6 +29,7 @@ class CreateGameActivity : AppCompatActivity(), View.OnClickListener {
         binding.activityCreateGamePlayAiButton.setOnClickListener(this)
     }
 
+    @SuppressLint("ShowToast")
     override fun onClick(v: View?) {
         var i: Intent? = null
         var state: GameState? = null
@@ -46,7 +48,7 @@ class CreateGameActivity : AppCompatActivity(), View.OnClickListener {
                 toast = Toast.makeText(
                     this,
                     R.string.notImplemented_toast,
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_LONG
                 )
                 toast.show()
             }
@@ -55,7 +57,7 @@ class CreateGameActivity : AppCompatActivity(), View.OnClickListener {
                 toast = Toast.makeText(
                     this,
                     R.string.notImplemented_toast,
-                    Toast.LENGTH_SHORT
+                    Toast.LENGTH_LONG
                 )
                 toast.show()
             }
