@@ -292,6 +292,7 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
 
     private fun drawFieldCards() {
         val parentLayout = binding.fragmentGameRelativeLayout
+        val layoutHelperCenter = binding.fragmentGameHelper
 
         for (index in 0 until currentCardsOnField.size) {
             val card = currentCardsOnField[index]
@@ -310,7 +311,8 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
                     } else {
                         lp.addRule(RelativeLayout.BELOW, currentCardsOnFieldImgView[index - 4].id)
                     }
-                    lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, parentLayout.id)
+                    //lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT, parentLayout.id)
+                    lp.addRule(RelativeLayout.START_OF, layoutHelperCenter.id)
                 }
                 1 -> {
                     if (index == 1) {
@@ -318,7 +320,8 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
                     } else {
                         lp.addRule(RelativeLayout.BELOW, currentCardsOnFieldImgView[index - 4].id)
                     }
-                    lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnFieldImgView[index - 1].id)
+                    //lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnFieldImgView[index - 1].id)
+                    lp.addRule(RelativeLayout.END_OF, layoutHelperCenter.id)
                 }
                 2 -> {
                     if (index == 2) {
@@ -326,7 +329,8 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
                     } else {
                         lp.addRule(RelativeLayout.BELOW, currentCardsOnFieldImgView[index - 4].id)
                     }
-                    lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnFieldImgView[index - 1].id)
+                    //lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnFieldImgView[index - 1].id)
+                    lp.addRule(RelativeLayout.END_OF, currentCardsOnFieldImgView[1].id)
                 }
                 3 -> {
                     if (index == 3) {
@@ -335,8 +339,9 @@ class GameFragment : Fragment(), View.OnLongClickListener, View.OnClickListener,
                         lp.addRule(RelativeLayout.BELOW, currentCardsOnFieldImgView[index - 4].id)
                     }
 
-                    lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnFieldImgView[index - 1].id)
-                    view.layoutParams = lp
+                    //lp.addRule(RelativeLayout.RIGHT_OF, currentCardsOnFieldImgView[index - 1].id)
+                    //view.layoutParams = lp
+                    lp.addRule(RelativeLayout.START_OF, currentCardsOnFieldImgView[0].id)
                 }
             }
             view.layoutParams = lp
