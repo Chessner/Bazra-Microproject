@@ -8,6 +8,20 @@
 
 
     <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="-8dp"
+        android:layout_marginBottom="-8dp"
+        app:cardBackgroundColor="@color/purple_200"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="@+id/activity_splash_screen_cardView"
+        app:layout_constraintStart_toStartOf="@+id/activity_splash_screen_cardView"
+        app:layout_constraintTop_toTopOf="@+id/activity_splash_screen_cardView" />
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/activity_splash_screen_cardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -43,4 +57,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.66" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
